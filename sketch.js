@@ -3,7 +3,6 @@ var groundImage, spriteGround, groundMov;
 var wall;
 var floor;
 var nube;
-var nubesimg;
 var cactus, catuses;
 var obstacle1, obstacle2, obstacle3, obstacle4;
 var play=1, end=0;
@@ -40,7 +39,6 @@ function setup(){
   spriteGround.velocityX= -5;
   spriteGround.addImage("imgground",groundImage)
   //agregar tamaño y posición al Trex
-  trex.scale = 0.5; 
   trex.x = 50
   wall.visible =  false;
   floor.visible = false;
@@ -51,7 +49,6 @@ function setup(){
 function nube(){
   if(frameCount % 80 == 0){
   nubes = createSprite(650,Math.round(random(12, 50)),30,30);
-  nubes.velocityX = -9;
   nubes.addImage("imgnube", nubesimg);
   nubes.lifetime= 90;
   grupoNubes.add(nubes)
@@ -147,7 +144,6 @@ function draw(){
   //nube()
 
   ///////Movemos los collides al final de la función draw para darle prioridad al condicional de salto
-  trex.collide(wall);
   trex.collide(edges[3]);
   trex.collide(floor);
   
